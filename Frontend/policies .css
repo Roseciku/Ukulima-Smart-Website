@@ -1,0 +1,35 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   background-color: #4CAF50; 
+   /* background-image: url(./images/signup\ page\ background.jpeg);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   height: auto;
+   color: white; */
+   font-family:  "Roboto", sans-serif;
+  }
+  h1{
+    text-align: center;
+    font-weight: 900;
+    font-size: 40px;
+  }
+h2{
+    text-align: center;
+    font-weight: 600;
+    font-size: 30px;
+}
+#container{
+    width: 70%;
+}
+
+#reporting h2{
+    font-weight: 500;
+    font-size: 40px;
+}
+#reporting{
+    margin-bottom: 5%;
+}

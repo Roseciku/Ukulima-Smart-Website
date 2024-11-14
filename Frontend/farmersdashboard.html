@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmers Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to Your Farmer Dashboard</h1>
+     <p>Manage your produce listings, and view sales.</p>
+     <div id="produce">
+
+     </div>
+<form id="produce_form">
+    <label for="farmer_name">Farmers name (firstname & lastname):</label><br>
+    <input type="text" id="farmer_name" name="farmer_name" required><br>
+
+    <label for="produce_location">Produce Location:</label> <br>
+    <input type="text" id="produce_location" name="produce_location" required><br>
+
+    <label for="produce_name"> Produce Name:</label><br>
+    <input type="text" id="produce_name" name="produce_name" placeholder="beans, maize, bananas, mangoes ...." required><br>
+
+    <label for="quantity">Produce Quantity</label> <br>
+    <input type="text" id="quantity" name="quantity" placeholder="kgs, bags..." required> <br>
+
+    <label for="price">Price per Kg</label><br>
+    <input type="text" id="price" name="price" required><br>
+
+    <label for="description">Additional description of your produce</label><br>
+    <input type="text" id="description" name="description"><br>
+
+    <button type="submit" >Submit</button>
+</form>
+</body>
+</html>
