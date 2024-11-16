@@ -66,6 +66,11 @@ font-family: "Roboto", sans-serif;
  form p{
     text-align: left;
  }
+ span{
+  color: red;
+  font-size: 12px;
+  font-weight: 300;
+ }
  @media (max-width: 768px){
 
     #container{

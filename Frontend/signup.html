@@ -22,43 +22,53 @@
         <section>
             <h2>Create Your Account</h2>
             <p>Whether you're a farmer looking to sell your produce or a consumer wanting fresh and fair-priced products, Ukulima Smart is here to connect you.</p>
-            <form>
+            <form id="registration_form">
                 <label for="name">First & Last Name:</label><br>
-                <input type="text" id="name" name="name" required><br>
+                <input type="text" id="name" name="name" placeholder="Ann Mumbi"><br>
+                <span id="nameerror"></span> <br>
                 
                 <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br>
+                <input type="email" id="email" name="email" placeholder="example@gmail.com"><br>
+                <span id="emailerror"></span> <br>
                 
                 <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" required><br>
+                <input type="password" id="password" name="password"><br>
+                <span id="passworderror"></span> <br>
                 
                 <label for="confirmpassword">Confirm Password:</label><br>
-                <input type="password" id="confirmpassword" name="confirmpassword" required><br>
-
+                <input type="password" id="confirmpassword" name="confirmpassword"><br>
+                <span id="confirmerror"></span> <br>
+                
                 <label for="phone">Phone Number:</label><br>
-                <input type="tel" id="phone" name="phone" required><br>
-
+                <input type="tel" id="phone" name="phone" placeholder="0713256879"><br>
+                <span id="phoneerror"></span> <br>
+                
                 <label for="county">County:</label> <br>
-                <input type="text" id="county" name="county" required><br>
-
+                <input type="text" id="county" name="county" placeholder="Laikipia"><br>
+                <span id="countyerror"></span> <br>
+            
+                
                 <label for="town">Nearest Town:</label> <br>
-                <input type="text" id="town" name="town" required><br>
-
+                <input type="text" id="town" name="town" placeholder="Nanyuki town"><br>
+                <span id="townerror"></span><br>
+               
                 <label for="role">I am a:</label><br>
-                <select id="role" name="role" required>
+                <select id="role" name="role">
                     <option value="" disabled selected>Select your role</option>
                     <option value="farmer">Farmer</option>
                     <option value="consumer">Consumer</option>
                     <option value="transport_provider">Transport Provider</option>
                 </select>
-                
+                <span id="roleerror"></span> <br>
+
                 <p>By creating an account, you agree to our <a href="policies.html">Policies,Terms and Conditions</a>.</p>
                 
-                <button type="submit">Sign Up</button>
+                <button id="submitbtn" type="submit">Sign Up</button>
             </form>
-            <p>Already have an account? <a href="/login">Log in here</a>.</p>
+            <p>Already have an account? <a href="login.html">Log in here</a>.</p>
         </section>
     </main>
 </div>
+<script src="./signup.js"></script>
 </body>
 </html>

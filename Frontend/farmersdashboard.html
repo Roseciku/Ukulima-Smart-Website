@@ -4,33 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmers Dashboard</title>
+    <link rel="stylesheet" href="./farmer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
+    <button id="logout">Log Out</button> <br>
     <h1>Welcome to Your Farmer Dashboard</h1>
      <p>Manage your produce listings, and view sales.</p>
+     <button id="produceadd">Add your produce</button>
      <div id="produce">
 
      </div>
 <form id="produce_form">
-    <label for="farmer_name">Farmers name (firstname & lastname):</label><br>
-    <input type="text" id="farmer_name" name="farmer_name" required><br>
+    <button type="button" id="close_form" class="close-btn">&times;</button><br>
+    <label for="farmer_name">Firstname & Lastname:</label><br>
+    <input type="text" id="farmer_name" name="farmer_name"> <br>
+    <span id="nameerror"></span> <br>
 
     <label for="produce_location">Produce Location:</label> <br>
-    <input type="text" id="produce_location" name="produce_location" required><br>
+    <input type="text" id="produce_location" name="produce_location"><br>
+    <span id="locationerror"></span> <br>
 
     <label for="produce_name"> Produce Name:</label><br>
-    <input type="text" id="produce_name" name="produce_name" placeholder="beans, maize, bananas, mangoes ...." required><br>
+    <input type="text" id="produce_name" name="produce_name" placeholder="beans, maize, bananas, mangoes ...."><br>
+    <span id="produceerror"></span> <br>
 
-    <label for="quantity">Produce Quantity</label> <br>
-    <input type="text" id="quantity" name="quantity" placeholder="kgs, bags..." required> <br>
+    <label for="quantity">Produce Quantity:</label> <br>
+    <input type="text" id="quantity" name="quantity" placeholder="kgs, bags..."> <br>
+    <span id="quantityerror"></span> <br>
 
-    <label for="price">Price per Kg in Kenya Shillings</label><br>
-    <input type="text" id="price" name="price" required><br>
+    <label for="price">Price per Kg in Kenya Shillings:</label><br>
+    <input type="text" id="price" name="price"><br>
+    <span id="priceerror"></span> <br>
 
-    <label for="description">Additional description of your produce</label><br>
+    <label for="description">Additional description of your produce:</label><br>
     <input type="text" id="description" name="description"><br>
+    <span id="descriptionerror"></span> <br>
 
-    <button type="submit" >Submit</button>
+    <button id="submit" type="submit" >Submit</button>
 </form>
+<script src="./farmer.js"></script>
 </body>
 </html>

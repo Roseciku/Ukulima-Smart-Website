@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(./images/tractor.jpeg);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   height: 100vh;
+   color:  white;    
+   font-family:  "Roboto", sans-serif
+}
+
+h1{
+    margin-top: 50px;
+    margin-bottom:10px;
+}
+
+p{
+    margin-bottom: 15px;
+}
+#produceadd{
+    width: 200px; 
+    height:40Px;
+    border-radius: 10px;
+    border:0; 
+    font-size: 20px;
+    background-color: #FFEB3B;
+
+}
+#submit{
+    width: 400px; 
+    height:40Px;
+    border-radius: 10px;
+    border:0; 
+    font-size: 20px;
+    background-color: #FFEB3B;
+}
+#produce_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:30%;
+    background-color: #6D4C41;
+    margin: auto; 
+    display: none;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%); 
+    z-index:1000;  
+    position: relative;  
+    
+}
+
+#produce_form #description{
+    height: 150px;
+}
+#produce_form .close-btn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 40px;
+    color: #FFEB3B;
+    cursor: pointer;
+}
+#produce_form input{
+height:30Px;
+width: 400px;
+border-radius: 5px;
+border: 0;
+}
+
+span{
+    color: red;
+    font-size: 12px;
+    font-weight: 300;
+   }
+
+   #logout{
+    position: absolute;
+    margin-top: 5px;
+    right: 10px;
+     width: 200px; 
+    height:40Px;
+    border-radius: 10px;
+    border:0; 
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #FFEB3B;
+    
+    cursor: pointer;
+   }
+   /* Small screens (mobile) */
+@media (max-width: 767px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    #produceadd {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #produce_form {
+        width: 100%;
+    }
+
+    #produce_form input {
+        font-size: 14px;
+    }
+
+    #submit {
+        font-size: 18px;
+    }
+
+    .close-btn {
+        font-size: 18px;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    #produce_form {
+        width: 70%;
+    }
+
+    #submit {
+        font-size: 18px;
+    }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+    #produce_form {
+        width: 30%;
+    }
+
+    #submit {
+        font-size: 20px;
+    }
+}

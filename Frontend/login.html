@@ -15,18 +15,21 @@
     <main>
         <section>
             <h2>Login to Your Account</h2>
-            <form>
+            <form id="loginform">
                 <label for="email">Email:</label><br>
                 <input type="text" id="email" name="email" required><br>
-                
+                <span id="emailerror"></span> <br>
+
                 <label for="password">Password:</label><br>
                 <input type="password" id="password" name="password" required><br>
+                <span id="passworderror"></span> <br>
+
                 
                 <button type="submit">Log In</button>
             </form>
             <p>Don't have an account? <a href="signup.html">Sign up here</a>.</p>
         </section>
     </main>
-
+    <script src="./login.js"></script>
 </body>
 </html>
