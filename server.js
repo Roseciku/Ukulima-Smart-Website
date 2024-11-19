@@ -1,20 +1,21 @@
 const express = require('express');
 const db = require('./config/db');
-const bodyParser = require('bodyParser');
+const bodyParser = require('body-parser');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 const dotenv = require('dotenv');
 const path = require ('path');
+const cors = require ('cors');
 const routes = require('./routes/userRoutes');
 
 dotenv.config();
 const app = express();
-
+app.use(cors());
 
 //configure middleware
 app.use(express.static(path.join(__dirname, 'Frontend')));
 app.use(bodyParser.json());
-app.use(bodyParse.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended:true}));
 
 //configure sessionstore
 const sessionStore = new MySQLStore({}, db);
@@ -29,6 +30,7 @@ app.use(session({
         maxAge: 1000 * 60 *60
     }
 }))
+
 
 
 // app.get('/createTables', async(req, res) => {
