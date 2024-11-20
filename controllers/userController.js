@@ -69,6 +69,7 @@ exports.produce = async (req, res) => {
 
     const{farmer_name,
         email,
+        farmer_contact,
         produce_location,
         produce_name,
         quantity,
@@ -77,8 +78,7 @@ exports.produce = async (req, res) => {
 
         console.log(req.body); 
 
-        // Ensure none of the required fields are undefined
-    if (!farmer_name || !email || !produce_location || !produce_name || !quantity || !price || !description) {
+    if (!farmer_name || !email || !farmer_contact || !produce_location || !produce_name || !quantity || !price || !description) {
         return res.status(400).json({ message: 'All fields are required!' });
     }
 
@@ -92,13 +92,53 @@ exports.produce = async (req, res) => {
 
         const user_id = user[0].user_id;
 
-        await db.execute('INSERT INTO commodities(user_id, farmer_name, email, produce_location, produce_name, quantity, price,description )VALUES(?, ?, ?, ?, ?, ?, ?, ?)',[user_id,farmer_name, email, produce_location, produce_name, quantity, price, description])
+        await db.execute('INSERT INTO commodities(user_id, farmer_name, email,farmer_contact, produce_location, produce_name, quantity, price,description )VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)',[user_id,farmer_name, email, farmer_contact, produce_location, produce_name, quantity, price, description])
         return res.status(201).json({message: 'Produce entered Successfully!'})
     
     } catch (error) {
         console.error(error);
         res.status(500).json({message: 'An error occured during entry', error:error.message})
     }
+}
+
+// getting all produce for a specific farmer to display it in their dashboard
+
+exports.getFarmerProduce =async(req, res)=>{
+
+    if(!req.session.userId){
+        return res.status(401).json({message: 'Unauthorized!'})
+    }
+
+try {
+    const [user] = await db.execute('SELECT user_id, name, email, password FROM users WHERE email = ?', [req.session.email])
+    console.log({user})
+    if(user.length ===0){
+        return res.status(400).json({message: 'The user does not exist'})
+    }
+
+    const user_email = user[0].email;
+    const [produce] = await db.execute('SELECT * FROM commodities WHERE email = ?', [user_email])
+    return res.status(201).json({ message: 'Produce retrieved successfully', produce: produce })
+
+} catch (error) {
+    console.error(error);
+    return res.status(500).json({message: 'An error occured during retrieving,', error:error.message});
+}
+
+}
+
+//getting all the produce for all the farmer for market purposes
+
+exports.getAllProduce = async (req, res)=>{
+
+try {
+    const [produce] = await db.execute('SELECT * FROM commodities');
+    return res.status(200).json(produce);
+
+} catch (error) {
+    console.error(error);
+    res.status(500).json({message: 'An error occurred while fetching produce', error: error.message})
+}
 }
 
 //logout
