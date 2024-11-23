@@ -58,7 +58,8 @@ p{
 }
 
 #produce_form #description{
-    height: 150px;
+  
+    padding: 10px;
 }
 #produce_form .close-btn {
     position: absolute;
@@ -75,6 +76,7 @@ height:30Px;
 width: 400px;
 border-radius: 5px;
 border: 0;
+padding:10px;
 }
 
 span{
@@ -87,8 +89,9 @@ span{
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    gap: 10px;
 }
-   #logout{
+   #logout, #market{
     margin-top: 5px;
     margin-bottom: 10px;
     height: 30px;

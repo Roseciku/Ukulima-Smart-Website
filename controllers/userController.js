@@ -49,6 +49,7 @@ exports.loginUser = async (req, res) => {
         req.session.role = user[0].role;
 
         console.log(req.session);
+        
         return res.status(200).json({message: 'Successful Login!', role: user[0].role})
         
     } catch (error) {

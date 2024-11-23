@@ -11,12 +11,6 @@ body{
     align-items: center;
     height:100vh;
    background-color: #4CAF50; 
-   /* background-image: url(./images/signup\ page\ background.jpeg);
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
-   height: auto;
-   color: white; */
   }
   
 
@@ -32,13 +26,14 @@ body{
       margin-bottom: 10px;
      }
 form{
-        font-family: "Roboto", sans-serif;
-      font-weight: 700;
+      font-family: "Roboto", sans-serif;
+      font-weight: 900;
       font-style: normal;
+      font-size: 20px;
      }
      input, button{
-        width: 80%;
-        height: 30px;
+        width: 100%;
+        height: 40px;
         margin-bottom: 10px;
         border-radius: 5px;
         border: 0;

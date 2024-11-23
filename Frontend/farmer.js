@@ -11,41 +11,41 @@ function isValidPassword(password) {
 }
 
 //loading existing produce
-document.addEventListener('DOMContentLoaded', async()=>{
-try {
-    const response = await fetch ('http://localhost:4000/api/produce/farmer');
-    const produce = await response.json();
+// document.addEventListener('DOMContentLoaded', async()=>{
+// try {
+//     const response = await fetch ('http://localhost:4000/api/produce/farmer');
+//     const produce = await response.json();
 
-    console.log(produce)
+//     console.log(produce)
 
-    if (Array.isArray(produce)) {
+//     if (Array.isArray(produce)) {
 
-    const produceDiv = document.getElementById('produce');
-    produceDiv.innerHTML ="";
+//     const produceDiv = document.getElementById('produce');
+//     produceDiv.innerHTML ="";
 
-    produce.forEach(item =>{
-        const produceItem = document.createElement('div');
-        produceItem.innerHTML =`
-        <h3>${item.produce_name}</h3>
-        <p>Location: ${item.produce_location}</p>
-        <p>Quantity: ${item.quantity}</p>
-        <p>Price: ${item.price}</p>
-        <p>Description: ${item.description}</p>  
-        `
-        const deletebtn = document.createElement('button');
-        deletebtn.innerHTML="Delete";
+//     produce.forEach(item =>{
+//         const produceItem = document.createElement('div');
+//         produceItem.innerHTML =`
+//         <h3>${item.produce_name}</h3>
+//         <p>Location: ${item.produce_location}</p>
+//         <p>Quantity: ${item.quantity}</p>
+//         <p>Price: ${item.price}</p>
+//         <p>Description: ${item.description}</p>  
+//         `
+//         const deletebtn = document.createElement('button');
+//         deletebtn.innerHTML="Delete";
 
-    produceItem.appendChild(deletebtn);
-    produceDiv.appendChild(produceItem);
-    })
-} else{
-    console.error('API did not return an array:', produce);
-}
-} catch (error) {
-    console.error('Error fetching farmer produce:', error);
-}
+//     produceItem.appendChild(deletebtn);
+//     produceDiv.appendChild(produceItem);
+//     })
+// } else{
+//     console.error('API did not return an array:', produce);
+// }
+// } catch (error) {
+//     console.error('Error fetching farmer produce:', error);
+// }
 
-})
+// })
 
 //Adding new produce
 
@@ -53,6 +53,7 @@ const produceForm= document.getElementById('produce_form');
 const produceAdd = document.getElementById('produceadd');
 const closeFormButton = document.getElementById('close_form');
 const logOut =document.getElementById('logout')
+const market = document.getElementById('market')
 
 closeFormButton.addEventListener('click', function() {
     produceForm.style.display = 'none';
@@ -145,6 +146,7 @@ try {
     headers:{
         'Content-Type':'application/json'
     },
+
     body: JSON.stringify({
         farmer_name,
         email,
@@ -153,33 +155,33 @@ try {
         produce_name,
         quantity,
         price,
-        description 
+        description, 
     })
  });
  
  const result = await response.json();
 
- if(response.ok){
+ if(result.ok){
     alert('Produce added successfully!');
 
-    const produceDiv = document.getElementById('produce');
-    produceDiv.innerHTML ="";
+    // const produceDiv = document.getElementById('produce');
+    // produceDiv.innerHTML ="";
 
-    result.produce.forEach(item=>{
-        const produceItem = document.createElement('div');
-        produce.innerHTML =`
-        <h3>${item.produce_name}</h3>
-        <p>Location: ${item.produce_location}</p>
-        <p>Quantity: ${item.quantity}</p>
-        <p>Price: ${item.price}</p>
-        <p>Description: ${item.description}</p>  
-        `
-        const deletebtn = document.createElement('button');
-        deletebtn.innerHTML="Delete";
+    // result.produce.forEach(item=>{
+    //     const produceItem = document.createElement('div');
+    //     produce.innerHTML =`
+    //     <h3>${item.produce_name}</h3>
+    //     <p>Location: ${item.produce_location}</p>
+    //     <p>Quantity: ${item.quantity}</p>
+    //     <p>Price: ${item.price}</p>
+    //     <p>Description: ${item.description}</p>  
+    //     `
+    //     const deletebtn = document.createElement('button');
+    //     deletebtn.innerHTML="Delete";
 
-    produceItem.appendChild(deletebtn);
-    produceDiv.appendChild(produceItem);
-    });
+    // produceItem.appendChild(deletebtn);
+    // produceDiv.appendChild(produceItem);
+    // });
  } else {
     alert('Failed to add produce:' + result.message)
  }
@@ -189,6 +191,7 @@ try {
 }
 
 }
+
 })
 
 logOut.addEventListener('click', async () => {
@@ -206,3 +209,8 @@ logOut.addEventListener('click', async () => {
         console.error('failed', result.error);
     }
 });
+
+market.addEventListener('click', ()=>{
+
+    window.location.href='market.html';
+})

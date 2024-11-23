@@ -124,4 +124,6 @@ if(isValid){
         console.error("Error:",error)
     }
 }
+
+registrationForm.reset();
 })

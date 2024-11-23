@@ -27,11 +27,14 @@ app.use(session({
     resave: false,
     saveUninitialized:false,
     cookie:{
-        maxAge: 1000 * 60 *60
+        maxAge: 1000 * 60 *60,// 1 hour
+         sameSite: 'lax'
     }
 }))
 
-
+sessionStore.on('error', (error) => {
+    console.error('Session store error:', error);
+});
 
 // app.get('/createTables', async(req, res) => {
 // try {
