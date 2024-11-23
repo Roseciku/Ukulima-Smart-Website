@@ -23,35 +23,49 @@
             <h2>Create Your Account</h2>
             <p>Whether you're a farmer looking to sell your produce or a consumer wanting fresh and fair-priced products, Ukulima Smart is here to connect you.</p>
             <form id="registration_form">
-                <label for="name">First & Last Name:</label><br>
-                <input type="text" id="name" name="name" placeholder="Ann Mumbi"><br>
+
+                <div class="flex">
+                <label for="name">First & Last Name:</label>
+                <input type="text" id="name" name="name" placeholder="Ann Mumbi">
                 <span id="nameerror"></span> <br>
-                
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" placeholder="example@gmail.com"><br>
+                </div>
+
+                <div class="flex">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="example@gmail.com">
                 <span id="emailerror"></span> <br>
-                
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password"><br>
+            </div>
+
+                <div class="flex">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
                 <span id="passworderror"></span> <br>
+                </div>
+                <div class="flex">
+                <label for="confirmpassword">Confirm Password:</label>
+                <input type="password" id="confirmpassword" name="confirmpassword">
+                <span id="confirmerror"></span> 
+            </div>
                 
-                <label for="confirmpassword">Confirm Password:</label><br>
-                <input type="password" id="confirmpassword" name="confirmpassword"><br>
-                <span id="confirmerror"></span> <br>
-                
-                <label for="phone">Phone Number:</label><br>
-                <input type="tel" id="phone" name="phone" placeholder="0713256879"><br>
+            <div class="flex">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="0713256879">
                 <span id="phoneerror"></span> <br>
-                
-                <label for="county">County:</label> <br>
-                <input type="text" id="county" name="county" placeholder="Laikipia"><br>
+                </div>
+
+                <div class="flex">
+                <label for="county">County:</label> 
+                <input type="text" id="county" name="county" placeholder="Laikipia">
                 <span id="countyerror"></span> <br>
-            
+            </div>
                 
-                <label for="town">Nearest Town:</label> <br>
-                <input type="text" id="town" name="town" placeholder="Nanyuki town"><br>
+            <div class="flex">
+                <label for="town">Nearest Town:</label> 
+                <input type="text" id="town" name="town" placeholder="Nanyuki town">
                 <span id="townerror"></span><br>
-               
+               </div>
+
+               <div class="flex">
                 <label for="role">I am a:</label><br>
                 <select id="role" name="role">
                     <option value="" disabled selected>Select your role</option>
@@ -60,7 +74,7 @@
                     <option value="transport_provider">Transport Provider</option>
                 </select>
                 <span id="roleerror"></span> <br>
-
+            </div>
                 <p>By creating an account, you agree to our <a href="policies.html">Policies,Terms and Conditions</a>.</p>
                 
                 <button id="submitbtn" type="submit">Sign Up</button>

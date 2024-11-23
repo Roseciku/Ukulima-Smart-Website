@@ -5,17 +5,17 @@
 }
 
 body{
-    background-image: url(./images/tractor.jpeg);
+background-image: url(./images/tractor.jpeg);
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
-   height: 100vh;
+   height:100vh;
    color:  white;    
-   font-family:  "Roboto", sans-serif
+   font-family:  "Roboto", sans-serif;
 }
 
 h1{
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom:10px;
 }
 
@@ -41,24 +41,20 @@ p{
 }
 #produce_form{
     display: flex;
-    flex-direction: column;
+    
     justify-content: center;
     align-items: center;
     width:30%;
     background-color: #6D4C41;
     margin: auto; 
-    display: none;
+ display: none; 
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    position: fixed;
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%); 
+     text-align: center;
+     position:relative;
     z-index:1000;  
-    position: relative;  
-    
+   
 }
 
 #produce_form #description{
@@ -87,17 +83,22 @@ span{
     font-weight: 300;
    }
 
+   #button{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
    #logout{
-    position: absolute;
     margin-top: 5px;
-    right: 10px;
-     width: 200px; 
-    height:40Px;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 150px;
     border-radius: 10px;
     border:0; 
     font-size: 20px;
     font-weight: 600;
-    background-color: #FFEB3B;
+    background-color: #FFEB3B;  
+    cursor: pointer;
     
     cursor: pointer;
    }
@@ -105,6 +106,7 @@ span{
 @media (max-width: 767px) {
     body {
         padding: 10px;
+        height: auto;
     }
 
     h1 {
@@ -116,20 +118,22 @@ span{
     }
 
     #produceadd {
-        width: 100%;
+        width: 40%;
         font-size: 14px;
     }
 
     #produce_form {
-        width: 100%;
+        width: 60%;
     }
 
     #produce_form input {
         font-size: 14px;
+        width: 80%;
     }
 
     #submit {
         font-size: 18px;
+        width: 80%;
     }
 
     .close-btn {
@@ -139,10 +143,20 @@ span{
 
 /* Medium screens (tablets) */
 @media (min-width: 768px) and (max-width: 1023px) {
-    #produce_form {
-        width: 70%;
-    }
 
+    body{
+        height: auto;
+    }
+    #produce_form {
+        width: 60%;
+    }
+    #produce_form input{
+        height:30Px;
+        width: 80%;
+        border-radius: 5px;
+        border: 0;
+        }
+        
     #submit {
         font-size: 18px;
     }
@@ -150,11 +164,17 @@ span{
 
 /* Large screens (desktops) */
 @media (min-width: 1024px) {
-    #produce_form {
-        width: 30%;
-    }
 
+    body{
+        height: auto;
+    }
+    #produce_form {
+        width: 40%;
+    }
+#produce_form input{
+    width: 80%;
+}
     #submit {
         font-size: 20px;
     }
-}
+} 

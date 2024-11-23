@@ -16,12 +16,16 @@ try {
     const response = await fetch ('http://localhost:4000/api/produce/farmer');
     const produce = await response.json();
 
+    console.log(produce)
+
+    if (Array.isArray(produce)) {
+
     const produceDiv = document.getElementById('produce');
     produceDiv.innerHTML ="";
 
-    produce.forEach(item=>{
+    produce.forEach(item =>{
         const produceItem = document.createElement('div');
-        produce.innerHTML =`
+        produceItem.innerHTML =`
         <h3>${item.produce_name}</h3>
         <p>Location: ${item.produce_location}</p>
         <p>Quantity: ${item.quantity}</p>
@@ -34,6 +38,9 @@ try {
     produceItem.appendChild(deletebtn);
     produceDiv.appendChild(produceItem);
     })
+} else{
+    console.error('API did not return an array:', produce);
+}
 } catch (error) {
     console.error('Error fetching farmer produce:', error);
 }
@@ -184,6 +191,18 @@ try {
 }
 })
 
-logOut.addEventListener('click',()=>{
-    window.location.href ='home.html';
-})
+logOut.addEventListener('click', async () => {
+    const response = await fetch('http://localhost:4000/api/logout/user', {
+        method: 'GET'
+    });
+    
+    const result = response.json();
+
+    if(response.status === 200){
+      
+        alert('logged out successfully')
+        window.location.href = 'login.html'
+    } else {
+        console.error('failed', result.error);
+    }
+});
