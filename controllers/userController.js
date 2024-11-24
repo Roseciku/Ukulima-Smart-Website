@@ -64,8 +64,12 @@ exports.produce = async (req, res) => {
     if(!errors.isEmpty()){
         return res.status(400).json({message:'Please correct input errors', errors:errors.array()})
     }
+    console.log(req.session)
+
     if(!req.session.userId){
+        
         return res.status(401).json({message: 'Unauthorized!'})
+
     }
 
     const{farmer_name,

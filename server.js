@@ -10,12 +10,13 @@ const routes = require('./routes/userRoutes');
 
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors({credentials:true, origin:"http://127.0.0.1:5500"}));
 
 //configure middleware
 app.use(express.static(path.join(__dirname, 'Frontend')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+//app.use(express.json)
 
 //configure sessionstore
 const sessionStore = new MySQLStore({}, db);
@@ -25,10 +26,12 @@ app.use(session({
     secret: process.env.SESSION_SECRET,
     store: sessionStore,
     resave: false,
-    saveUninitialized:false,
+    saveUninitialized:true,
     cookie:{
         maxAge: 1000 * 60 *60,// 1 hour
-         sameSite: 'lax'
+         sameSite: 'Strict',
+         secure: false,
+         httpOnly: true
     }
 }))
 

@@ -11,6 +11,7 @@ background-image: url(./images/tractor.jpeg);
    background-repeat: no-repeat;
    height:100vh;
    color:  white;    
+   
    font-family:  "Roboto", sans-serif;
 }
 
@@ -41,7 +42,6 @@ p{
 }
 #produce_form{
     display: flex;
-    
     justify-content: center;
     align-items: center;
     width:30%;
@@ -141,6 +141,12 @@ span{
 
     .close-btn {
         font-size: 18px;
+    }
+
+  
+
+    #logout, #market{
+     font-size: 15px;
     }
 }
 
