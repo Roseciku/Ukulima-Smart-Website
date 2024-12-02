@@ -57,6 +57,10 @@ document.addEventListener('DOMContentLoaded', async()=>{
                   produceItem.appendChild(deletebtn);
                   produceDiv.appendChild(produceItem);
               });
+
+              // Add delete event listeners after rendering produce items
+              addDeleteEventListeners();
+
           } else {
               console.error('Expected an array but received:', produce);
               alert('Failed to load produce data.');
@@ -218,6 +222,9 @@ console.log(result)
           produceItem.appendChild(deletebtn);
           produceDiv.appendChild(produceItem);
       });
+
+        addDeleteEventListeners();
+
   } else {
       console.error('Expected an array but received:', produce);
       alert('Failed to load produce data.');
@@ -225,7 +232,7 @@ console.log(result)
 } else {
   alert('Failed to add produce: ' + result.message);
 }
-
+       
 } catch (error) {
 console.error('Error:', error);
 }
