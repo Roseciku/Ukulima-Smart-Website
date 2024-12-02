@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const allProduceDiv = document.getElementById('allproduce');
         allProduceDiv.innerHTML = ''; 
 
-        allProduceDiv.classList.add('allProduceDiv')
-
         produce.forEach(item => {
             const produceItem = document.createElement('div');
             produceItem.innerHTML = `
@@ -25,6 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             allProduceDiv.appendChild(produceItem);
 
         produceItem.classList.add('produceitem')
+        
         });
     } catch (error) {
         console.error('Error fetching market produce:', error);
@@ -33,17 +32,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 logOut.addEventListener('click', async () => {
     const response = await fetch('http://localhost:4000/api/logout/user', {
-        method: 'GET'
+        method: 'POST',
+        credentials: 'include'
     });
     
-    const result = response.json();
-
-    if(response.status === 200){
-      
-        alert('logged out seccessfully')
-        window.location.href = 'login.html'
-    } else {
-        console.error('failed', result.error);
-    }
+    localStorage.removeItem('accessToken');
+    alert('Logout successful')
+    window.location.href ='login.html';
 });
+
   

@@ -4,13 +4,7 @@
     box-sizing: border-box;
 }
 
-body{
-background-image: url(./images/tractor.jpeg);
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
-   height:100vh;
-   color:  white;    
+body{  
    
    font-family:  "Roboto", sans-serif;
 }
@@ -53,13 +47,16 @@ p{
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
      text-align: center;
      position:relative;
-    z-index:1000;  
+    z-index: 2;  
+    top: 0;
+    color: white;
    
 }
 
 #produce_form #description{
   
     padding: 10px;
+    
 }
 #produce_form .close-btn {
     position: absolute;
@@ -91,6 +88,27 @@ span{
     justify-content: flex-end;
     gap: 10px;
 }
+
+#produce{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+.produceItem{
+    width:300px;
+    background-color: #FFEB3B;  
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+.produceItem h3{
+    text-transform:uppercase;
+    margin-bottom: 5px;
+}
+
+/* .deletebutton{
+    background-color: #6D4C41;
+} */
    #logout, #market{
     margin-top: 5px;
     margin-bottom: 10px;

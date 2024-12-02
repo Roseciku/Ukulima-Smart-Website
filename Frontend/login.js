@@ -1,4 +1,6 @@
 
+// import jwtDecode from 'jwt-decode';
+
 function validEmail(email){
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
@@ -15,6 +17,7 @@ const loginForm=document.getElementById('loginform');
 loginForm.addEventListener('submit', async (e)=>{
 
 e.preventDefault()
+
 
 const email =document.getElementById('email').value;
 const password= document.getElementById('password').value;
@@ -56,11 +59,23 @@ try {
     });
 
     const result = await response.json();
+    console.log(result)
     if(response.ok){
         alert("Login successful!");
-       if(result.role === "farmer"){
+        
+        // Extract the token from the result
+        const token = result.accessToken;
+
+        // Store the access token in localStorage
+        localStorage.setItem('accessToken', token);  // Store the token
+            
+        // Decode the token to get user information
+        const decodedToken = JSON.parse(atob(token.split('.')[1]));
+
+        //check users role
+       if(decodedToken.role === "farmer"){
         window.location.href = 'farmersdashboard.html';
-       } else if(result.role === "consumer"){
+       } else if(decodedToken.role === "consumer"){
         window.location.href = 'market.html';
        }else{
         alert("Unknown role")
@@ -75,9 +90,6 @@ try {
 
 }
 
-
-email="";
-password="";
 
 })
 

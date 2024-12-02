@@ -36,6 +36,7 @@ To set up the project locally, follow these steps:
     DB_USER=your_db_user
     DB_PASSWORD=your_db_password
     DB_NAME=your_db_name
+    PORT= 4000
     ```
 6. Install nodemon:
     ```bash
