@@ -83,12 +83,15 @@ const market = document.getElementById('market')
 
 closeFormButton.addEventListener('click', function() {
     produceForm.style.display = 'none';
+    document.getElementById('produce').style.opacity = '0.9';
 });
 
 
 produceAdd.addEventListener('click', ()=>{
 
 produceForm.style.display='block';
+document.getElementById('produce').style.opacity = '0.2';
+
 
 })
 
