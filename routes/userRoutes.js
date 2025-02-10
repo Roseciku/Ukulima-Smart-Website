@@ -1,5 +1,5 @@
 const express =  require ('express');
-const{registerUser, loginUser, logoutUser,produce, getFarmerProduce, getAllProduce}= require('../controllers/userController')
+const{registerUser, loginUser, logoutUser,produce, getFarmerProduce, getAllProduce, deleteProduce}= require('../controllers/userController')
 const {check} = require('express-validator');
 const router = express.Router();
 
@@ -25,5 +25,7 @@ router.post('/produce', produce)
 router.get('/produce/farmer', getFarmerProduce)
 
 router.get('/produce/farmers', getAllProduce)
+
+router.delete('/produce/:produceId', deleteProduce)
 
 module.exports = router;

@@ -4,14 +4,9 @@
     box-sizing: border-box;
 }
 
-body{
-background-image: url(./images/tractor.jpeg);
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
-   height:100vh;
-   color:  white;    
-   
+body{  
+    background: url(./images/guava\ \(2\).jpeg) no-repeat center center fixed;
+    background-size: cover;
    font-family:  "Roboto", sans-serif;
 }
 
@@ -22,6 +17,7 @@ h1{
 
 p{
     margin-bottom: 15px;
+    
 }
 #produceadd{
     width: 200px; 
@@ -29,7 +25,8 @@ p{
     border-radius: 10px;
     border:0; 
     font-size: 20px;
-    background-color: #FFEB3B;
+    background-color: #FBC02D;
+    
 
 }
 #submit{
@@ -38,24 +35,25 @@ p{
     border-radius: 10px;
     border:0; 
     font-size: 20px;
-    background-color: #FFEB3B;
+    background-color: #FBC02D;
 }
 #produce_form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:30%;
+    display: none;
+    position: fixed;  /* Keeps the form in place */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
     background-color: #6D4C41;
-    margin: auto; 
- display: none; 
-    padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-     text-align: center;
-     position:relative;
-    z-index:1000;  
-   
+    text-align: center;
+    z-index: 1000;
+    height: 70%;
 }
+   
+
 
 #produce_form #description{
   
@@ -68,11 +66,11 @@ p{
     background: none;
     border: none;
     font-size: 40px;
-    color: #FFEB3B;
+    color: #FBC02D;
     cursor: pointer;
 }
 #produce_form input{
-height:30Px;
+height:30px;
 width: 400px;
 border-radius: 5px;
 border: 0;
@@ -91,7 +89,63 @@ span{
     justify-content: flex-end;
     gap: 10px;
 }
-   #logout, #market{
+
+#produce{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.fade {
+    opacity: 0.3; /* Makes the produce section fade */
+}
+
+.produceItem{
+    position: relative;
+    width:300px;
+    background-color:#FBC02D;;  
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.produceItem:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+.produceItem h3{
+    text-transform:uppercase;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #5D4037;
+}
+
+
+.deletebutton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #D32F2F;  /* Soft red */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Space between icon and text */
+}
+.deletebutton:hover {
+    background-color: #B71C1C; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+   #logout, #market, #home{
     margin-top: 5px;
     margin-bottom: 10px;
     height: 30px;
@@ -100,7 +154,7 @@ span{
     border:0; 
     font-size: 20px;
     font-weight: 600;
-    background-color: #FFEB3B;  
+    background-color: #FBC02D;  
     cursor: pointer;
     
     cursor: pointer;

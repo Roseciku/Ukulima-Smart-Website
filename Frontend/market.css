@@ -1,16 +1,10 @@
 body{    
-   /* font-family:  "Roboto", sans-serif;
-   background-color: #6D4C41;
-   color: white; */
-   background-image: url(./images/guava\ \(1\).jpeg);
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
-   height:100vh;
-   color:  white;    
    font-family:  "Roboto", sans-serif;
+   background: url(./images/guava\ \(2\).jpeg) no-repeat center center fixed;
+    background-size: cover;
+   
+   
 }
-
 
 
 #body_p{
@@ -18,15 +12,16 @@ body{
     font-size: 20px;
 }
 
-#container{
+/* #container{
     width: 80%;
     margin: auto;
     
-}
-.allProduceDiv{
+} */
+ 
+#allproduce{
     display: flex;
-    gap: 10px;
-    justify-content: center;
+     flex-wrap: wrap; 
+    gap: 20px;
     color: black;
   
 }
@@ -35,18 +30,27 @@ body{
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    gap: 10px;
 }
 .produceitem{
     padding: 0px 30px;
-    background-color: #FFEB3B;
-    width: 300px;
+    background-color: #FBC02D;
+    padding: 15px;
+    width: 20%;
     height: auto;
     color: black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+.produceitem:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
 }
 .produceitem h3{
     text-transform: uppercase;
 }
-#logout{
+#logout, #dashboard, #home{
     margin-top: 5px;
     margin-bottom: 10px;
     height: 30px;
@@ -55,9 +59,12 @@ body{
     border:0; 
     font-size: 20px;
     font-weight: 600;
-    background-color: #FFEB3B;  
+    background-color: #FBC02D;  
     cursor: pointer;
 }
+#menuToggle span{
+    display: none;
+ }
 /* Small screens (max-width: 768px) */
 @media (max-width: 768px) {
     #container {
@@ -69,19 +76,24 @@ body{
         flex-direction: column;
         align-items: center;
         
+        
     }
 
     .produceitem {
-        width: 30%;
+        width: 40%;
     }
 
     #body_p {
-        font-size: 16px;
+        font-size: 15px;
     }
 
-    #logout {
-        width: 120px;
-        font-size: 18px;
+    #logout, #dashboard, #home {
+        width: 70px;
+        font-size: 12px;
+        padding: 0 ;
+        height: 30px;
+        
+
     }
     .produceitem h3{
         font-size: 15px;
@@ -89,46 +101,115 @@ body{
     body{
         height: auto;
     }
+    #menuToggle{
+       position: relative;
+        z-index: 1;
+        margin-top: -5px;
+        top: 5px;
+       left: 94%;
+       color: black;   
+      
+      }
+   
+    #menuToggle span {
+        display: block; 
+        width: 50px;
+        height: 6px;
+        margin-bottom: 5px; 
+        position: relative; 
+        background-color: white;
+        border-radius: 3px;
+        z-index: 1; 
+}
+#button{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+   left:-4%;
+   gap: 0px;
+  
 }
 
+#button.show {
+    display: block;
+    
+   }
+
+}
 /* Medium screens (min-width: 769px) and (max-width: 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
     #container {
-        width: 90%;
+        width: 100%;
     }
 
     .allProduceDiv {
         flex-wrap: wrap;
         justify-content: space-around;
+        
     }
 
     .produceitem {
-        width: 45%;
+        width: 25%;
     }
 
     #body_p {
         font-size: 18px;
     }
 
-    #logout {
-        width: 140px;
-        font-size: 19px;
+    #logout, #dashboard, #home {
+        width: 80px;
+        font-size: 12px;
+        padding: 0 ;
+        height: 30px;
+        
+    }
+    #menuToggle{
+        position: relative;
+         z-index: 1;
+         margin-top: -5px;
+         top: 5px;
+        left: 95%;
+        color: black;  
+        flex-direction: column; 
+       }
+    
+     #menuToggle span {
+         display: block; 
+         width: 50px;
+         height: 6px;
+         margin-bottom: 5px; 
+         position: relative; 
+         background: white;
+         border-radius: 3px;
+         z-index: 1; 
+ }
+ #button{
+     position: absolute;
+     display: none;
+     flex-direction: column;
+    left:-5%;
+    gap: 0px;
+    
+ }
+ 
+ #button.show {
+     display: block;
     }
 }
 
 /* Large screens (min-width: 1025px) */
 @media (min-width: 1025px) {
-    #container {
+    /* #container {
         width: 70%;
-    }
+    } */
 
     /* .allProduceDiv {
         flex-wrap: wrap;
     } */
 
-    .produceitem {
+    /* .produceitem {
         width: 30%;
-    }
+    } */
 
     #body_p {
         font-size: 20px;

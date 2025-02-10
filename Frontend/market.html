@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Market</title>
-    <link rel="stylesheet" href="./market.css">
-</head>
-<body>
-    <div id="button">
+    <link rel="stylesheet" href="./market.css" />
+  </head>
+  <body>
+    <div id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+      <div id="button">
+        <button id="home">Home</button>
+        <button id="dashboard">Dashboard</button>
         <button id="logout">Logout</button>
+      </div>
     </div>
     <div id="container">
-    <h1>Available Produce</h1>
-    <p id="body_p">Browse through the fresh produce listed by our farmers.</p>
-    <p id="body_p">
-    To connect with our farmers, please contact them directly using the phone number listed in the produce details. Feel free to reach out with any questions or to make a purchase. Our farmers are ready and happy to assist you!     
-    </p>
-    <div id="allproduce">
-
+      <h1>Available Produce</h1>
+      <p id="body_p">Browse through the fresh produce listed by our farmers.</p>
+      <p id="body_p">
+        To connect with our farmers, please contact them directly using the
+        phone number listed in the produce details. Feel free to reach out with
+        any questions or to make a purchase. Our farmers are ready and happy to
+        assist you!
+      </p>
+      <div id="allproduce"></div>
     </div>
-</div>
     <script src="./market.js"></script>
-</body>
+  </body>
 </html>

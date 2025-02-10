@@ -30,6 +30,7 @@ form{
       font-weight: 900;
       font-style: normal;
       font-size: 20px;
+   
      }
      input, button{
         width: 100%;
@@ -39,6 +40,11 @@ form{
         border: 0;
         padding: 5px;
      }
+
+     input {
+      border: 1px solid #6D4C41;  
+      background-color: #fff;
+  }
      button{
         border-radius: 5px;
         border: 0;
@@ -46,8 +52,11 @@ form{
         font-family: "Roboto", sans-serif;
        font-weight: 700;
       font-style: normal;
-        background-color: #FFEB3B;
+        background-color: #FFEB3B;   
      }
+     button:hover {
+      background-color: #FBC02D; /* Slightly darker yellow */
+  }
     @media(max-width:768px){
     body{
     display: flex;
