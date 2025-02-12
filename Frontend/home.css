@@ -29,7 +29,7 @@ body {
 #logo li{
    font-size: 30px;
    font-weight: 900px; 
-   color: #FFEB3B;  
+   color: #FBC02D;  
 }
 #navigation{
    display: flex;
@@ -63,7 +63,7 @@ button{
    
 }
 button:hover{
-   background-color: #f8ed8a;
+   background-color: #FFEB3B;
 }
 #policies:hover, #market:hover{
    color: #FFEB3B;
@@ -85,7 +85,7 @@ margin-top: 10%;
 }
 #header_section h2{
    margin-bottom: 2%;
-   color: #FFEB3B;
+   color: #FBC02D;
    font-size: 40px;
    font-weight: 900;
 }
@@ -103,7 +103,7 @@ margin-top: 10%;
    margin-top: 4%;
    font-size: 40px;
    margin-bottom: 2%;
-   color: #FFEB3B;
+   color: #FBC02D;
 }
 #services{
    display: flex;
@@ -160,12 +160,12 @@ margin-top: 10%;
 
 #about h2{
    font-size: 40px;
-   color: #FFEB3B;
+   color: #FBC02D;
    margin-bottom: 2%;
 }
 #about h3{
    font-size: 30px;
-   color: #FFEB3B;
+   color: #FBC02D;
    margin-bottom: 1%;
 }
 #about p{
@@ -189,7 +189,7 @@ margin-top: 10%;
 #contact_us h2{
 font-size: 40px;
 margin-bottom: 2%;
-color: #FFEB3B;
+color: #FBC02D;
 }
 #contact_us p{
    font-weight: 400;
@@ -210,7 +210,7 @@ button{
    border: 0;
    font-size: 20px;
    font-weight: 600;
-   background-color: #FFEB3B;
+   background-color: #FBC02D;
 }
 #menuToggle span{
    display: none;

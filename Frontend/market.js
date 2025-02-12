@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <p>Farmer: ${item.farmer_name}</p>
                 <p>Location: ${item.produce_location}</p>
                 <p>Quantity: ${item.quantity}</p>
-                <p>Price: ${item.price}</p>
+                <p>Price per kg: ${item.price}</p>
                 <p>Description: ${item.description}</p>
             `;
             allProduceDiv.appendChild(produceItem);

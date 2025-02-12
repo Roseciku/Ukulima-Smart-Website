@@ -1,24 +1,26 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-  font-family:  "Roboto", sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
   background: url(./images/tractor.jpeg) no-repeat center center fixed;
   background-size: cover;
- 
-  }
-  main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(to bottom, #8D6E63, #6D4C41);
-    margin: auto;
-    padding: 30px;
-    max-width: 600px; 
+  background-position: center; /* Ensures it stays centered */
+  background-repeat: no-repeat; /* Prevents tiling */
+  min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #8d6e63, #6d4c41);
+  margin: auto;
+  padding: 30px;
+  max-width: 600px;
 }
 
 section {
@@ -30,51 +32,51 @@ section {
   max-width: 600px;
 }
 
- h1, h2{
-    text-align: center;
-    margin-bottom: 20px;
-    font-family:  "Roboto", sans-serif;
- }
- #first_header{
-    margin-top: 5%;
- }
- p{
-    text-align: center;
-font-family: "Roboto", sans-serif;
+h1,
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+}
+#first_header {
+  margin-top: 5%;
+}
+p {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
   margin-bottom: 10px;
- }
+}
 
- #registration_form{
+#registration_form {
   display: flex;
   flex-direction: column;
   gap: 15px;
   justify-content: center;
-  
- }
+}
 
- .flex{
+.flex {
   display: flex;
   flex-direction: column;
   margin-bottom: 12px;
- }
+}
 
- .flex label {
+.flex label {
   margin-bottom: 5px;
 }
 
 .flex input,
 .flex select {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
 }
 button {
   padding: 10px 15px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 4px;
@@ -85,89 +87,89 @@ button {
 }
 
 button:hover {
-  background-color: #388E3C;
+  background-color: #388e3c;
 }
- 
- span{
+
+span {
   color: red;
   font-size: 12px;
   font-weight: 300;
- }
-  @media (max-width: 768px) {
- main{
-  width: 90%;
-  padding: 10px;
- }
- 
-    section {
-      padding:15px;
+}
+@media (max-width: 768px) {
+  main {
+    width: 90%;
+    padding: 10px;
+  }
+
+  section {
+    padding: 15px;
   }
 
   header h1 {
-      font-size: 1 em;
+    font-size: 1 em;
   }
 
   header p {
-      font-size: 1em;
+    font-size: 1em;
   }
 
   h2 {
-      font-size: 1.6em;
+    font-size: 1.6em;
   }
 
   form {
-      padding: 10px;
+    padding: 10px;
   }
 
   button {
-      padding: 12px;
-      font-size: 1.1em;
+    padding: 12px;
+    font-size: 1.1em;
   }
 
-  .flex input, .flex select {
-      padding: 10px;
-      font-size: 0.9em;
+  .flex input,
+  .flex select {
+    padding: 10px;
+    font-size: 0.9em;
   }
 
   p {
-      font-size: 0.9em;
+    font-size: 0.9em;
   }
 }
 
 /* Medium screens (min-width: 769px and max-width: 1024px) */
- @media (min-width: 769px) and (max-width: 1024px) {
-  
-  main{
+@media (min-width: 769px) and (max-width: 1024px) {
+  main {
     width: 80%;
-   }
+  }
   section {
-      padding: 30px;
-      
+    padding: 30px;
   }
 
   header h1 {
-      font-size: 2.2em;
+    font-size: 2.2em;
   }
 
   header p {
-      font-size: 1.1em;
+    font-size: 1.1em;
   }
 
   h2 {
-      font-size: 1.8em;
+    font-size: 1.8em;
   }
 
   button {
-      padding: 14px;
-      font-size: 1.2em;
+    padding: 14px;
+    font-size: 1.2em;
   }
 
-  .flex input, .flex select {
-      padding: 12px;
-      font-size: 1em;
+  .flex input,
+  .flex select {
+    padding: 12px;
+    font-size: 1em;
   }
 
   p {
-      font-size: 1em;
-  } 
+    font-size: 1em;
+  }
 }

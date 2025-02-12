@@ -211,7 +211,7 @@ console.log(result)
               <h3>${item.produce_name}</h3>
               <p>Location: ${item.produce_location}</p>
               <p>Quantity: ${item.quantity}</p>
-              <p>Price: ${item.price}</p>
+              <p>Price per kg: ${item.price}</p>
               <p>Description: ${item.description}</p>
           `;
           const deletebtn = document.createElement('button');
@@ -224,7 +224,7 @@ console.log(result)
       });
   } else {
       console.error('Expected an array but received:', produce);
-      alert('Failed to load produce data.');
+      alert('Your session has expired.Please login again.');
   }
 } else {
   alert('Failed to add produce: ' + result.message);
@@ -310,3 +310,14 @@ market.addEventListener('click', ()=>{
 
     window.location.href='market.html';
 })
+
+const spans = document.querySelectorAll('#menuToggle span');
+
+const buttons = document.getElementById('button');
+
+// Add click event listener to each span element
+spans.forEach(span => {
+  span.addEventListener('click', () => {
+    buttons.classList.toggle('show');
+  });
+});

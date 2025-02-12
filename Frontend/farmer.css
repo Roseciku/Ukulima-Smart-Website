@@ -8,6 +8,7 @@ body{
     background: url(./images/guava\ \(2\).jpeg) no-repeat center center fixed;
     background-size: cover;
    font-family:  "Roboto", sans-serif;
+   background-attachment: fixed;
 }
 
 h1{
@@ -26,6 +27,7 @@ p{
     border:0; 
     font-size: 20px;
     background-color: #FBC02D;
+    margin-left: 25px;
     
 
 }
@@ -52,9 +54,6 @@ p{
     z-index: 1000;
     height: 70%;
 }
-   
-
-
 #produce_form #description{
   
     padding: 10px;
@@ -92,6 +91,7 @@ span{
 
 #produce{
     display: flex;
+    justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
     margin-bottom: 15px;
@@ -121,12 +121,7 @@ span{
     font-weight: bold;
     color: #5D4037;
 }
-
-
 .deletebutton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
     background-color: #D32F2F;  /* Soft red */
     color: white;
     border: none;
@@ -140,6 +135,7 @@ span{
     align-items: center;
     justify-content: center;
     gap: 5px; /* Space between icon and text */
+    
 }
 .deletebutton:hover {
     background-color: #B71C1C; /* Darker red on hover */
@@ -156,9 +152,10 @@ span{
     font-weight: 600;
     background-color: #FBC02D;  
     cursor: pointer;
-    
-    cursor: pointer;
    }
+   #menuToggle span{
+    display: none;
+ }
    /* Small screens (mobile) */
 @media (max-width: 767px) {
     body {
@@ -196,11 +193,62 @@ span{
     .close-btn {
         font-size: 18px;
     }
+    .produceItem{
+         width: 30%
+    }
 
-  
-
-    #logout, #market{
-     font-size: 15px;
+    .deletebutton{
+        font-size: 12px;
+        width: 45px;
+        height:15px;
+    }
+    .produceItem h3{
+        font-size:14px;
+    }
+    .produceItem p{
+        font-size:14px;
+    }
+    #logout, #market, #home {
+        width: 65px;
+        font-size: 12px;
+        padding: 0 ;
+        height: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    #menuToggle{
+        position: relative;
+         z-index: 1;
+         margin-top: -5px;
+         top: 5px;
+        left: 94%;
+        color: black;   
+       
+       }
+    
+     #menuToggle span {
+         display: block; 
+         width: 50px;
+         height: 6px;
+         margin-bottom: 5px; 
+         position: relative; 
+         background-color: white;
+         border-radius: 3px;
+         z-index: 1; 
+ }
+ #button{
+     position: absolute;
+     display: none;
+     flex-direction: column;
+    left:-7%;
+    gap:0px;
+   
+ }
+ #button.show {
+     display: block;    
     }
 }
 
@@ -223,6 +271,64 @@ span{
     #submit {
         font-size: 18px;
     }
+    .produceItem{
+        width: 30%
+   }
+
+   .deletebutton{
+       font-size: 14px;
+       width: 55px;
+       height:20px;
+   }
+   .produceItem h3{
+       font-size:14px;
+   }
+   .produceItem p{
+       font-size:14px;
+   }
+    #logout, #market, #home {
+        width: 80px;
+        font-size: 12px;
+        padding: 0 ;
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    #menuToggle{
+        position: relative;
+         z-index: 1;
+         margin-top: -5px;
+         top: 5px;
+        left: 95%;
+        color: black;  
+        flex-direction: column; 
+       }
+    
+     #menuToggle span {
+         display: block; 
+         width: 50px;
+         height: 6px;
+         margin-bottom: 5px; 
+         position: relative; 
+         background: white;
+         border-radius: 3px;
+         z-index: 1; 
+ }
+ #button{
+     position: absolute;
+     display: none;
+     flex-direction: column;
+    left:-5%;
+    gap: 0px;
+    
+ }
+ 
+ #button.show {
+     display: block;
+    }
 }
 
 /* Large screens (desktops) */
@@ -232,7 +338,7 @@ span{
         height: auto;
     }
     #produce_form {
-        width: 40%;
+        width: 45%;
     }
 #produce_form input{
     width: 80%;

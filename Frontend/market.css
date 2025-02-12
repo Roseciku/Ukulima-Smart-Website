@@ -2,30 +2,21 @@ body{
    font-family:  "Roboto", sans-serif;
    background: url(./images/guava\ \(2\).jpeg) no-repeat center center fixed;
     background-size: cover;
-   
-   
+    background-attachment: fixed;
 }
-
 
 #body_p{
     font-weight: 500;
     font-size: 20px;
 }
 
-/* #container{
-    width: 80%;
-    margin: auto;
-    
-} */
- 
 #allproduce{
     display: flex;
      flex-wrap: wrap; 
     gap: 20px;
-    color: black;
+    color: black;    
   
 }
-
 #button{
     width: 100%;
     display: flex;
@@ -74,9 +65,7 @@ body{
     
     .allProduceDiv {
         flex-direction: column;
-        align-items: center;
-        
-        
+        align-items: center;     
     }
 
     .produceitem {
@@ -92,8 +81,10 @@ body{
         font-size: 12px;
         padding: 0 ;
         height: 30px;
-        
-
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .produceitem h3{
         font-size: 15px;
@@ -110,7 +101,6 @@ body{
        color: black;   
       
       }
-   
     #menuToggle span {
         display: block; 
         width: 50px;
@@ -125,7 +115,7 @@ body{
     position: absolute;
     display: none;
     flex-direction: column;
-   left:-4%;
+   left:-7%;
    gap: 0px;
   
 }
@@ -161,6 +151,10 @@ body{
         font-size: 12px;
         padding: 0 ;
         height: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         
     }
     #menuToggle{
