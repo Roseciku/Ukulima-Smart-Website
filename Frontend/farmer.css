@@ -21,6 +21,7 @@ p{
     
 }
 #produceadd{
+
     width: 200px; 
     height:40Px;
     border-radius: 10px;
@@ -91,7 +92,7 @@ span{
 
 #produce{
     display: flex;
-    justify-content: center;
+    margin-left: 25px;
     gap: 20px;
     flex-wrap: wrap;
     margin-bottom: 15px;

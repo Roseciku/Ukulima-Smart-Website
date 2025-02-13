@@ -239,9 +239,30 @@ alert('Please log in first');
 }
 }
  
+produceForm.reset();
 });
 
 //deleting produce
+
+document.addEventListener('click', (event) => {
+    // Check if the clicked element is a delete button
+    if (event.target.classList.contains('deletebutton')) {
+        // Find the closest produce item (parent container of the button)
+        const produceItem = event.target.closest('.produceItem');
+        // Get the produce ID from the data-id attribute
+        const produceId = produceItem?.getAttribute('data-id');
+
+        if (!produceId) {
+            console.error("Error: Missing data-id on produce item.");
+            return;
+        }
+
+        console.log(`Delete button clicked for produce ID: ${produceId}`);
+        // Call the function to delete the item
+        deleteProduce(produceId, produceItem);
+    }
+});
+
 async function deleteProduce(produceId, produceItem) {
 
     const retrievedToken = localStorage.getItem('accessToken');
@@ -276,23 +297,6 @@ async function deleteProduce(produceId, produceItem) {
     }
 }
 
-
-function addDeleteEventListeners() {
-    const deleteButtons = document.querySelectorAll('.deletebutton');
-    deleteButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            const produceItem = event.target.closest('.produceItem');
-            const produceId = produceItem.getAttribute('data-id');
-            console.log(`Delete button clicked for produce ID: ${produceId}`);
-            deleteProduce(produceId, produceItem);
-        });
-    });
-}
-
-// Call this function after the DOM has loaded and after produce items are dynamically added to the page.
-document.addEventListener('DOMContentLoaded', () => {
-    addDeleteEventListeners();
-});
 
 //logout
 logOut.addEventListener('click', async () => {
