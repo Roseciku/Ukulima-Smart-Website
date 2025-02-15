@@ -14,14 +14,16 @@ body{
 h1{
     margin-top: 20px;
     margin-bottom:10px;
+    margin-left: 10px;
 }
 
 p{
     margin-bottom: 15px;
+    margin-left: 10px;
     
 }
 #produceadd{
-
+    margin-bottom:15px;
     width: 200px; 
     height:40Px;
     border-radius: 10px;
@@ -97,6 +99,7 @@ span{
     flex-wrap: wrap;
     margin-bottom: 15px;
     transition: opacity 0.3s ease-in-out;
+    
 }
 
 .fade {
@@ -105,7 +108,7 @@ span{
 
 .produceItem{
     position: relative;
-    width:300px;
+    width:350px;
     background-color:#FBC02D;;  
     padding: 15px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
